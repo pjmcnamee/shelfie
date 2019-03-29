@@ -8,8 +8,8 @@ export default function Header() {
 		<header>
 			<img src={logo} alt="" className='logo'/>
 	  <h1>SHELFIE</h1>
-		<Link>Dashboard</Link>
-		<Link>Add Inventory</Link>
+		<Link className='header-link header-dashboard' to='/'>Dashboard</Link>
+		<Link className='header-link' to='/add'>Add Inventory</Link>
 		</header>
 	</div>
   )

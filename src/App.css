@@ -13,6 +13,27 @@ header {
   margin-bottom: 35px;
 }
 
+.header-link {
+  background: #ed6b5a;
+  text-decoration: none;
+  color: black;
+  padding: 8px;
+  border-radius: 5px;
+  height: 16px;
+  margin-top: 25px;
+  margin-left: 15px;
+}
+
+.header-dashboard {
+  margin-left: 55px;
+}
+
+main {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
 .logo {
   width: 35px;
   height: 35px;
@@ -22,17 +43,66 @@ header {
 }
 
 img {
-  width: 250px;
+  width: 300px;
   height: 250px;
 }
 
 .product-cards {
   display: flex;
+  border-radius: 10px;
   padding: 15px;
   flex-direction: row;
   justify-content: space-between;
   background: #d34735;
   margin-bottom: 10px;
+  width: 100%;
+}
+
+.product-buttons {
+  align-self: flex-end;
+}
+
+.product-info {
+  height: 50px;
+}
+
+.edit-link {
+  margin-left: 45px;
+}
+
+.product-nav {
+  background: #3ad886;
+  text-decoration: none;
+  color: black;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.green-links {
+  background: #d34735;
+  text-decoration: none;
+  color: black;
+  padding: 8px;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 8px;
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.input-div{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+input {
+ width: 100%;
 }
 
 .form-card {
@@ -49,4 +119,13 @@ img {
   flex-direction: row;
 }
 
+.edit-form-links {
+  background: #d34735;
+  text-decoration: none;
+  color: black;
+  padding: 8px;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 8px;
+}
 

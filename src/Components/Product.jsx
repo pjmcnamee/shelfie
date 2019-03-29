@@ -1,19 +1,19 @@
 import React from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 
 export default function Product(props) {
 
-	function deleteProduct(id){
+	function deleteProduct(id, bool){
 		axios.delete(`/api/products/${id}`).then(() => {
 			console.log('Deleted Product!')
 		}).catch(err => console.log('Front end error on deleting product ', err))
-		props.componentDidMount()
+		if(bool === true){
+		props.deleteSwitch(false)
+	}else{
+		props.deleteSwitch(true)
 	}
-
-	function sendEditProductInfo(product, bool){
-		props.editFlagState(bool)
-		props.setEditProduct(product)
-	}
+}
 
   return (
 	<div>
@@ -21,10 +21,19 @@ export default function Product(props) {
 		  return (
 			  <div key={product.product_id} className='product-cards'>
 				  <img src={product.product_imageurl} alt=""/>
+					<div className='product-info'>
 				  <h4>{product.product_name}</h4>
 				  <h4>${product.product_price}</h4>
-				  <button onClick={() => deleteProduct(product.product_id)}>Delete</button>
-				  <button onClick={() => sendEditProductInfo(product, true)}>Edit</button>
+					</div>
+					<div className='product-buttons'>
+				<Link className='product-nav' onClick={() => deleteProduct(product.product_id, true)}>Delete</Link>
+				<Link className='product-nav edit-link' to={{
+					pathname: `/edit/${product.product_id}`,
+					state: {
+						product: product
+					}
+				}}>Edit</Link>
+					</div>
 			  </div>
 		  )
 	  })}

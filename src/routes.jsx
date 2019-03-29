@@ -6,6 +6,8 @@ import EditForm from './Components/EditForm'
 
 export default (
 	<Switch>
-		<Route />
+		<Route component={Dashboard} exact path='/'/>
+		<Route component={CreateForm} path='/add'/>
+		<Route component={EditForm} path='/edit/:id'/>
 	</Switch>
 )

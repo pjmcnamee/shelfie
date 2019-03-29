@@ -27,7 +27,7 @@ module.exports = {
 		const {id} = req.params
 
 		db.delete_product(id)
-		.then(() => res.status(200).send('Deleted Product!'))
+		.then(products => res.status(200).send(products))
 		.catch(err => {
 			res.status(500).send({ errorMessage: 'Deleting product failed - backend' });
 			console.log(err);

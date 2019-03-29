@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from 'react-router-dom'
 
 export default class Form extends Component {
   constructor() {
     super();
     this.state = {
-      imageUrl: "",
+      imageUrl: 'https://www.blakleysflooring.com/wp-content/uploads/2016/03/Placeholder.png',
       productName: "",
       productPrice: 0
     };
@@ -59,10 +60,14 @@ export default class Form extends Component {
       <div className="form-card">
           <div className="create-form-card">
             <form>
+              <div className='create-form'>
+              <div>
+                <img src={this.state.imageUrl} alt=""/>
+              </div>
               <div>
                 <label>
                   Image URL:
-                  <div>
+                  <div className='input-div'>
                     <input
                       type="text"
                       value={this.state.imageUrl}
@@ -74,7 +79,7 @@ export default class Form extends Component {
               <div>
                 <label>
                   Product Name:
-                  <div>
+                  <div className='input-div'>
                     <input
                       type="text"
                       value={this.state.productName}
@@ -86,7 +91,7 @@ export default class Form extends Component {
               <div>
                 <label>
                   Price:
-                  <div>
+                  <div className='input-div'>
                     <input
                       type="number"
                       value={this.state.productPrice}
@@ -96,12 +101,9 @@ export default class Form extends Component {
                 </label>
               </div>
               <div className="form-button-container">
-                <button onClick={e => this.cancelProductAddition(e)}>
-                  Cancel
-                </button>
-                <button onClick={e => this.addToDataBase(e)}>
-                  Add to Inventory
-                </button>
+                <Link className='green-links' to='/'>Cancel</Link>
+                <Link className='green-links' to='/' onClick={() => this.addToDataBase()}>Add To Inventory</Link>
+              </div>
               </div>
             </form>
           </div>
